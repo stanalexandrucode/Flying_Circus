@@ -1,0 +1,6 @@
+{% extends "public.html" %}{% block title %}Main page{% endblock %}
+{% block main %}
+<h1>Congratulations your score is</h1>
+<h2>{{session['corect_answers']}}/{{number_of_question}}</h2>
+
+{% endblock %}

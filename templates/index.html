@@ -1,0 +1,23 @@
+{% extends "public.html" %}{% block title %}Main page{% endblock %}
+{% block main %}
+<h1>Quiz</h1>
+<hr>
+{% if 'logged_in' in session %}
+
+<h3>Hellow {{session['username']}}, you are logged in</h3>
+<p>
+    <bold>Are you ready to take the test?</bold>
+</p>
+<button type="button"><a href={{ url_for('test') }}>Yes </a></button>
+<p>
+    <bold>I'm not ready</bold>
+</p>
+<button type="button"><a href={{ url_for('logout') }}>Log out</a></button>
+{% else %}
+
+<p>You are not logget in</p>
+<button type="button"><a href={{ url_for('login') }}>Log IN</a></button>
+{% endif %}
+
+
+{% endblock %}

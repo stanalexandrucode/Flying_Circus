@@ -1,0 +1,16 @@
+{% extends "public.html" %}{% block title %}Quiz page{% endblock %}
+{% block main %}
+<form method="post">
+    <p>{{question}}</p><br>
+    {% for option in questions[question] %}
+    <label for="answer">{{option}}</label>
+    <input type="radio" id="answer" name="answer" value="{{questions[question][option]}}">
+    <br>
+    {% endfor %}
+    {% if session['question_nr'] == number_of_question-1 %}
+    <button type="submit">Finnish Test</button>
+    {% else %}
+    <button type="submit">Next question</button>
+    {%endif%}
+</form>
+{% endblock%}
